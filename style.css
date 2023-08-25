@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-y:auto;
+    overflow-x: hidden;
+    /* z axis par kaam krna hai isliye perspective active kiya hai ; */
+    perspective: 10px;
+}
+
+.container{
+    /* for using absolute position nearest ancestor should be non-static; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 100% acc to parent height */
+    height: 100%;
+    /* it is necessary to enable preserve 3d transform-style for parallex effect */
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background{
+    transform:translateZ(-40px) scale(5);
+}
+
+.foreground{
+    transform:translateZ(-20px) scale(3);
+} 
+
+.background, .foreground{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+/* The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container. */
+    object-fit:cover;
+}
+
+h1{
+    position: absolute;
+    font-size: 10rem;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    top:5rem;
+    left:50%;
+    transform: translateX(-50%);
+    letter-spacing:  4px ;
+    color: white;
+    text-shadow: 0 0 10px rgba( 0, 0, 0, 0.3);
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color:white;
+    padding:5rem 0;
+}
+.secHeading{
+    font-size:5rem;
+    padding:0 10rem;
+   font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+ 
+.text{
+    font-size:1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding:0 10rem;
+    margin: 5rem 0;
+}
+
+.desc{
+    position: absolute;
+    background-color: white;
+    padding:0.5rem 2.5rem; 
+    font-size: 3.5rem;
+    font-weight: 600;
+    
+    top:50%;
+    left:50%;
+    transform:   translateX(-50%) translateY(-50%);
+    color: black;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    height:500px;
+    /* image fixed hojayegi content scroll hoga uper se    */
+    background-attachment: fixed; 
+    /* image will be in center and properly spread throughout container */
+    background-size: cover;
+    background-position: center;
+}
+
+.bg1{
+    /* position: absolute; */
+    background-image: url(parallaxPractice/sport-1.jpg);
+}
+.bg2{
+    /* position: absolute; */
+    background-image: url(parallaxPractice/sport-2.jpg);
+}
+.bg3{
+    /* position: absolute; */
+    background-image: url(parallaxPractice/sport-3.jpg);
+}
+
